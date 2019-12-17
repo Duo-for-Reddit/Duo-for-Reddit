@@ -19,28 +19,52 @@ namespace RedditCommunications
             Model = model;
         }
 
-        public Task<BestResponse> GetBestAsync(BestResponseParameters parameters)
+        /// <summary>
+        /// Sends a GET request based on the 'best' parameters.
+        /// </summary>
+        /// <param name="parameters">Parameters to customize the search.</param>
+        /// <returns></returns>
+        public async Task<BestResponse> GetBestAsync(BestResponseParameters parameters)
         {
-            throw new NotImplementedException();
-        }
-
-        public Task<CommentsResponse> GetCommentsAsync(CommentsResponseParameters parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<HotResponse> GetHotAsync(HotResponseParameters parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Task<NewResponse> GetNewAsync(NewResponseParameters parameters)
-        {
-            throw new NotImplementedException();
+            Model.Endpoint = parameters.ToString();
+            return await GetResponse<BestResponse>(Model.URL);
         }
 
         /// <summary>
-        /// Sends a GET request based on the rising parameters.
+        /// Sends a GET request based on the 'comments' parameters.
+        /// </summary>
+        /// <param name="parameters">Parameters to customize the search.</param>
+        /// <returns></returns>
+        public async Task<CommentsResponse> GetCommentsAsync(CommentsResponseParameters parameters)
+        {
+            Model.Endpoint = parameters.ToString();
+            return await GetResponse<CommentsResponse>(Model.URL);
+        }
+
+        /// <summary>
+        /// Sends a GET request based on the 'hot' parameters.
+        /// </summary>
+        /// <param name="parameters">Parameters to customize the search.</param>
+        /// <returns></returns>
+        public async Task<HotResponse> GetHotAsync(HotResponseParameters parameters)
+        {
+            Model.Endpoint = parameters.ToString();
+            return await GetResponse<HotResponse>(Model.URL);
+        }
+
+        /// <summary>
+        /// Sends a GET request based on the 'new' parameters.
+        /// </summary>
+        /// <param name="parameters">Parameters to customize the search.</param>
+        /// <returns></returns>
+        public async Task<NewResponse> GetNewAsync(NewResponseParameters parameters)
+        {
+            Model.Endpoint = parameters.ToString();
+            return await GetResponse<NewResponse>(Model.URL);
+        }
+
+        /// <summary>
+        /// Sends a GET request based on the 'rising' parameters.
         /// </summary>
         /// <param name="parameters">Parameters to customize the request.</param>
         /// <returns></returns>
@@ -51,7 +75,7 @@ namespace RedditCommunications
         }
 
         /// <summary>
-        /// Sends a GET request based on the search parameters.
+        /// Sends a GET request based on the 'search' parameters.
         /// </summary>
         /// <param name="parameters">Parameters to customize the search.</param>
         /// <returns></returns>

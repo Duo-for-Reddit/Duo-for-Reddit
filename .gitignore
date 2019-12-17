@@ -338,3 +338,8 @@ ASALocalRun/
 
 # BeatPulse healthcheck temp database
 healthchecksdb
+
+# Tool inputs and outputs
+jsonproperties_input.txt
+jsonproperties_output.txt
+propertiesdata.txt
