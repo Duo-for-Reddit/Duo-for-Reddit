@@ -5,6 +5,11 @@ using System.Threading.Tasks;
 
 namespace RedditCommunications
 {
+    /// <summary>
+    /// Not implemented yet...
+    /// This will be used primarily for testing hard
+    /// coded data. Useful for offline work.
+    /// </summary>
     public class RedditFileDataTransfer : IRedditDataProxy
     {
         public Task<BestResponse> GetBestAsync(BestResponseParameters parameters)

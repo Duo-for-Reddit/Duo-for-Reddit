@@ -53,9 +53,9 @@ namespace RedditCommunications
         {
             var reponse = await dataProxy.GetRisingAsync(parameters);
 
-            foreach (var child in reponse.data.children)
+            foreach (var child in reponse.MainData.Children)
             {
-                var output = String.Format($"|{child.data.ups,-6:N0}|") + "  " + child.data.title;
+                var output = String.Format($"|{child.Data.Ups,-6:N0}|") + "  " + child.Data.Title;
                 Console.WriteLine(output);
             }
         }
@@ -66,9 +66,9 @@ namespace RedditCommunications
         {
             var response = await dataProxy.GetSearchAsync(parameters);
 
-            foreach (var child in response.data.children)
+            foreach (var child in response.MainData.Children)
             {
-                var output = String.Format($"|{child.data.ups,-6:N0}|") + "  " + child.data.title;
+                var output = String.Format($"|{child.Data.Ups,-6:N0}|") + "  " + child.Data.Title;
                 Console.WriteLine(output);
             }
         }

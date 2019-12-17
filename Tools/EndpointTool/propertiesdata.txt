@@ -1,0 +1,11 @@
+        public string Article { get; set; }
+        public string Comment { get; set; }
+        public int? Context { get; set; }
+        public int? Depth { get; set; }
+        public int? Limit { get; set; }
+        public bool? ShowEdits { get; set; }
+        public bool? ShowMore { get; set; }
+        public string Sort { get; set; }
+        public bool? SrDetail { get; set; }
+        public bool? Threaded { get; set; }
+        public int? Truncate { get; set; }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,466 +7,891 @@ namespace RedditCommunications
 {
     public class SearchResponse
     {
+        [JsonObject(MemberSerialization.OptIn)]
         public class Facets
         {
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class MediaEmbed
         {
-            public string content { get; set; }
-            public int width { get; set; }
-            public bool scrolling { get; set; }
-            public int height { get; set; }
+            [JsonProperty("content")]
+            public string Content { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("scrolling")]
+            public bool Scrolling { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Oembed
         {
-            public string provider_url { get; set; }
-            public string description { get; set; }
-            public string title { get; set; }
-            public string url { get; set; }
-            public string type { get; set; }
-            public int thumbnail_width { get; set; }
-            public int height { get; set; }
-            public int width { get; set; }
-            public string html { get; set; }
-            public string version { get; set; }
-            public string provider_name { get; set; }
-            public string thumbnail_url { get; set; }
-            public int thumbnail_height { get; set; }
-            public string author_name { get; set; }
-            public string author_url { get; set; }
+            [JsonProperty("provider_url")]
+            public string ProviderUrl { get; set; }
+            [JsonProperty("description")]
+            public string Description { get; set; }
+            [JsonProperty("title")]
+            public string Title { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
+            [JsonProperty("type")]
+            public string Type { get; set; }
+            [JsonProperty("thumbnail_width")]
+            public int ThumbnailWidth { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("html")]
+            public string Html { get; set; }
+            [JsonProperty("version")]
+            public string Version { get; set; }
+            [JsonProperty("provider_name")]
+            public string ProviderName { get; set; }
+            [JsonProperty("thumbnail_url")]
+            public string ThumbnailUrl { get; set; }
+            [JsonProperty("thumbnail_height")]
+            public int ThumbnailHeight { get; set; }
+            [JsonProperty("author_name")]
+            public string AuthorName { get; set; }
+            [JsonProperty("author_url")]
+            public string AuthorUrl { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class RedditVideo
         {
-            public string fallback_url { get; set; }
-            public int height { get; set; }
-            public int width { get; set; }
-            public string scrubber_media_url { get; set; }
-            public string dash_url { get; set; }
-            public int duration { get; set; }
-            public string hls_url { get; set; }
-            public bool is_gif { get; set; }
-            public string transcoding_status { get; set; }
+            [JsonProperty("fallback_url")]
+            public string FallbackUrl { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("scrubber_media_url")]
+            public string ScrubberMediaUrl { get; set; }
+            [JsonProperty("dash_url")]
+            public string DashUrl { get; set; }
+            [JsonProperty("duration")]
+            public int Duration { get; set; }
+            [JsonProperty("hls_url")]
+            public string HlsUrl { get; set; }
+            [JsonProperty("is_gif")]
+            public bool IsGif { get; set; }
+            [JsonProperty("transcoding_status")]
+            public string TranscodingStatus { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class SecureMedia
         {
-            public string type { get; set; }
-            public Oembed oembed { get; set; }
-            public RedditVideo reddit_video { get; set; }
+            [JsonProperty("type")]
+            public string Type { get; set; }
+            [JsonProperty("oembed")]
+            public Oembed Oembed { get; set; }
+            [JsonProperty("reddit_video")]
+            public RedditVideo RedditVideo { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class SecureMediaEmbed
         {
-            public string content { get; set; }
-            public int width { get; set; }
-            public bool scrolling { get; set; }
-            public string media_domain_url { get; set; }
-            public int height { get; set; }
+            [JsonProperty("content")]
+            public string Content { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("scrolling")]
+            public bool Scrolling { get; set; }
+            [JsonProperty("media_domain_url")]
+            public string MediaDomainUrl { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Gildings
         {
-            public int gid_1 { get; set; }
-            public int gid_2 { get; set; }
+            [JsonProperty("gid_1")]
+            public int Gid1 { get; set; }
+            [JsonProperty("gid_2")]
+            public int Gid2 { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Source
         {
-            public string url { get; set; }
-            public int width { get; set; }
-            public int height { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Resolution
         {
-            public string url { get; set; }
-            public int width { get; set; }
-            public int height { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Source2
         {
-            public string url { get; set; }
-            public int width { get; set; }
-            public int height { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Resolution2
         {
-            public string url { get; set; }
-            public int width { get; set; }
-            public int height { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Gif
         {
-            public Source2 source { get; set; }
-            public List<Resolution2> resolutions { get; set; }
+            [JsonProperty("source")]
+            public Source2 Source { get; set; }
+            [JsonProperty("resolutions")]
+            public List<Resolution2> Resolutions { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Source3
         {
-            public string url { get; set; }
-            public int width { get; set; }
-            public int height { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Resolution3
         {
-            public string url { get; set; }
-            public int width { get; set; }
-            public int height { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Mp4
         {
-            public Source3 source { get; set; }
-            public List<Resolution3> resolutions { get; set; }
+            [JsonProperty("source")]
+            public Source3 Source { get; set; }
+            [JsonProperty("resolutions")]
+            public List<Resolution3> Resolutions { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Variants
         {
-            public Gif gif { get; set; }
-            public Mp4 mp4 { get; set; }
+            [JsonProperty("gif")]
+            public Gif Gif { get; set; }
+            [JsonProperty("mp4")]
+            public Mp4 Mp4 { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Image
         {
-            public Source source { get; set; }
-            public List<Resolution> resolutions { get; set; }
-            public Variants variants { get; set; }
-            public string id { get; set; }
+            [JsonProperty("source")]
+            public Source Source { get; set; }
+            [JsonProperty("resolutions")]
+            public List<Resolution> Resolutions { get; set; }
+            [JsonProperty("variants")]
+            public Variants Variants { get; set; }
+            [JsonProperty("id")]
+            public string Id { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Preview
         {
-            public List<Image> images { get; set; }
-            public bool enabled { get; set; }
+            [JsonProperty("images")]
+            public List<Image> Images { get; set; }
+            [JsonProperty("enabled")]
+            public bool Enabled { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Oembed2
         {
-            public string provider_url { get; set; }
-            public string description { get; set; }
-            public string title { get; set; }
-            public string url { get; set; }
-            public string type { get; set; }
-            public int thumbnail_width { get; set; }
-            public int height { get; set; }
-            public int width { get; set; }
-            public string html { get; set; }
-            public string version { get; set; }
-            public string provider_name { get; set; }
-            public string thumbnail_url { get; set; }
-            public int thumbnail_height { get; set; }
-            public string author_name { get; set; }
-            public string author_url { get; set; }
+            [JsonProperty("provider_url")]
+            public string ProviderUrl { get; set; }
+            [JsonProperty("description")]
+            public string Description { get; set; }
+            [JsonProperty("title")]
+            public string Title { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
+            [JsonProperty("type")]
+            public string Type { get; set; }
+            [JsonProperty("thumbnail_width")]
+            public int ThumbnailWidth { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("html")]
+            public string Html { get; set; }
+            [JsonProperty("version")]
+            public string Version { get; set; }
+            [JsonProperty("provider_name")]
+            public string ProviderName { get; set; }
+            [JsonProperty("thumbnail_url")]
+            public string ThumbnailUrl { get; set; }
+            [JsonProperty("thumbnail_height")]
+            public int ThumbnailHeight { get; set; }
+            [JsonProperty("author_name")]
+            public string AuthorName { get; set; }
+            [JsonProperty("author_url")]
+            public string AuthorUrl { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class RedditVideo2
         {
-            public string fallback_url { get; set; }
-            public int height { get; set; }
-            public int width { get; set; }
-            public string scrubber_media_url { get; set; }
-            public string dash_url { get; set; }
-            public int duration { get; set; }
-            public string hls_url { get; set; }
-            public bool is_gif { get; set; }
-            public string transcoding_status { get; set; }
+            [JsonProperty("fallback_url")]
+            public string FallbackUrl { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("scrubber_media_url")]
+            public string ScrubberMediaUrl { get; set; }
+            [JsonProperty("dash_url")]
+            public string DashUrl { get; set; }
+            [JsonProperty("duration")]
+            public int Duration { get; set; }
+            [JsonProperty("hls_url")]
+            public string HlsUrl { get; set; }
+            [JsonProperty("is_gif")]
+            public bool IsGif { get; set; }
+            [JsonProperty("transcoding_status")]
+            public string TranscodingStatus { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Media
         {
-            public string type { get; set; }
-            public Oembed2 oembed { get; set; }
-            public RedditVideo2 reddit_video { get; set; }
+            [JsonProperty("type")]
+            public string Type { get; set; }
+            [JsonProperty("oembed")]
+            public Oembed2 Oembed { get; set; }
+            [JsonProperty("reddit_video")]
+            public RedditVideo2 RedditVideo { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class MediaEmbed2
         {
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class SecureMediaEmbed2
         {
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Gildings2
         {
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Source4
         {
-            public string url { get; set; }
-            public int width { get; set; }
-            public int height { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Resolution4
         {
-            public string url { get; set; }
-            public int width { get; set; }
-            public int height { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
+            [JsonProperty("width")]
+            public int Width { get; set; }
+            [JsonProperty("height")]
+            public int Height { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Variants2
         {
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Image2
         {
-            public Source4 source { get; set; }
-            public List<Resolution4> resolutions { get; set; }
-            public Variants2 variants { get; set; }
-            public string id { get; set; }
+            [JsonProperty("source")]
+            public Source4 Source { get; set; }
+            [JsonProperty("resolutions")]
+            public List<Resolution4> Resolutions { get; set; }
+            [JsonProperty("variants")]
+            public Variants2 Variants { get; set; }
+            [JsonProperty("id")]
+            public string Id { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Preview2
         {
-            public List<Image2> images { get; set; }
-            public bool enabled { get; set; }
+            [JsonProperty("images")]
+            public List<Image2> Images { get; set; }
+            [JsonProperty("enabled")]
+            public bool Enabled { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class CrosspostParentList
         {
-            public object approved_at_utc { get; set; }
-            public string subreddit { get; set; }
-            public string selftext { get; set; }
-            public string author_fullname { get; set; }
-            public bool saved { get; set; }
-            public object mod_reason_title { get; set; }
-            public int gilded { get; set; }
-            public bool clicked { get; set; }
-            public string title { get; set; }
-            public List<object> link_flair_richtext { get; set; }
-            public string subreddit_name_prefixed { get; set; }
-            public bool hidden { get; set; }
-            public object pwls { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("approved_at_utc")]
+            public object ApprovedAtUtc { get; set; }
+            [JsonProperty("subreddit")]
+            public string Subreddit { get; set; }
+            [JsonProperty("selftext")]
+            public string Selftext { get; set; }
+            [JsonProperty("author_fullname")]
+            public string AuthorFullname { get; set; }
+            [JsonProperty("saved")]
+            public bool Saved { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("mod_reason_title")]
+            public object ModReasonTitle { get; set; }
+            [JsonProperty("gilded")]
+            public int Gilded { get; set; }
+            [JsonProperty("clicked")]
+            public bool Clicked { get; set; }
+            [JsonProperty("title")]
+            public string Title { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("link_flair_richtext")]
+            public List<object> LinkFlairRichtext { get; set; }
+            [JsonProperty("subreddit_name_prefixed")]
+            public string SubredditNamePrefixed { get; set; }
+            [JsonProperty("hidden")]
+            public bool Hidden { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("pwls")]
+            public object Pwls { get; set; }
             public string link_flair_css_class { get; set; }
-            public int downs { get; set; }
-            public int thumbnail_height { get; set; }
-            public bool hide_score { get; set; }
-            public string name { get; set; }
-            public bool quarantine { get; set; }
-            public string link_flair_text_color { get; set; }
-            public object author_flair_background_color { get; set; }
-            public string subreddit_type { get; set; }
-            public int ups { get; set; }
-            public int total_awards_received { get; set; }
-            public MediaEmbed2 media_embed { get; set; }
-            public int thumbnail_width { get; set; }
-            public object author_flair_template_id { get; set; }
-            public bool is_original_content { get; set; }
-            public List<object> user_reports { get; set; }
-            public object secure_media { get; set; }
-            public bool is_reddit_media_domain { get; set; }
-            public bool is_meta { get; set; }
-            public object category { get; set; }
-            public SecureMediaEmbed2 secure_media_embed { get; set; }
-            public string link_flair_text { get; set; }
-            public bool can_mod_post { get; set; }
-            public int score { get; set; }
-            public object approved_by { get; set; }
-            public bool author_premium { get; set; }
-            public string thumbnail { get; set; }
-            public bool edited { get; set; }
+            [JsonProperty("downs")]
+            public int Downs { get; set; }
+            [JsonProperty("thumbnail_height")]
+            public int ThumbnailHeight { get; set; }
+            [JsonProperty("hide_score")]
+            public bool HideScore { get; set; }
+            [JsonProperty("name")]
+            public string Name { get; set; }
+            [JsonProperty("quarantine")]
+            public bool Quarantine { get; set; }
+            [JsonProperty("link_flair_text_color")]
+            public string LinkFlairTextColor { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("author_flair_background_color")]
+            public object AuthorFlairBackgroundColor { get; set; }
+            [JsonProperty("subreddit_type")]
+            public string SubredditType { get; set; }
+            [JsonProperty("ups")]
+            public int Ups { get; set; }
+            [JsonProperty("total_awards_received")]
+            public int TotalAwardsReceived { get; set; }
+            [JsonProperty("media_embed")]
+            public MediaEmbed2 MediaEmbed { get; set; }
+            [JsonProperty("thumbnail_width")]
+            public int ThumbnailWidth { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("author_flair_template_id")]
+            public object AuthorFlairTemplateId { get; set; }
+            [JsonProperty("is_original_content")]
+            public bool IsOriginalContent { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("user_reports")]
+            public List<object> UserReports { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("secure_media")]
+            public object SecureMedia { get; set; }
+            [JsonProperty("is_reddit_media_domain")]
+            public bool IsRedditMediaDomain { get; set; }
+            [JsonProperty("is_meta")]
+            public bool IsMeta { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("category")]
+            public object Category { get; set; }
+            [JsonProperty("secure_media_embed")]
+            public SecureMediaEmbed2 SecureMediaEmbed { get; set; }
+            [JsonProperty("link_flair_text")]
+            public string LinkFlairText { get; set; }
+            [JsonProperty("can_mod_post")]
+            public bool CanModPost { get; set; }
+            [JsonProperty("score")]
+            public int Score { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("approved_by")]
+            public object ApprovedBy { get; set; }
+            [JsonProperty("author_premium")]
+            public bool AuthorPremium { get; set; }
+            [JsonProperty("thumbnail")]
+            public string Thumbnail { get; set; }
+            [JsonProperty("edited")]
+            public bool Edited { get; set; }
             public object author_flair_css_class { get; set; }
-            public List<object> steward_reports { get; set; }
-            public List<object> author_flair_richtext { get; set; }
-            public Gildings2 gildings { get; set; }
-            public string post_hint { get; set; }
-            public object content_categories { get; set; }
-            public bool is_self { get; set; }
-            public object mod_note { get; set; }
-            public double created { get; set; }
-            public string link_flair_type { get; set; }
-            public object wls { get; set; }
-            public object removed_by_category { get; set; }
-            public object banned_by { get; set; }
-            public string author_flair_type { get; set; }
-            public string domain { get; set; }
-            public bool allow_live_comments { get; set; }
-            public object selftext_html { get; set; }
-            public object likes { get; set; }
-            public object suggested_sort { get; set; }
-            public object banned_at_utc { get; set; }
-            public object view_count { get; set; }
-            public bool archived { get; set; }
-            public bool no_follow { get; set; }
-            public bool is_crosspostable { get; set; }
-            public bool pinned { get; set; }
-            public bool over_18 { get; set; }
-            public Preview2 preview { get; set; }
-            public List<object> all_awardings { get; set; }
-            public List<object> awarders { get; set; }
-            public bool media_only { get; set; }
-            public string link_flair_template_id { get; set; }
-            public bool can_gild { get; set; }
-            public bool spoiler { get; set; }
-            public bool locked { get; set; }
-            public object author_flair_text { get; set; }
-            public bool visited { get; set; }
-            public object removed_by { get; set; }
-            public object num_reports { get; set; }
-            public object distinguished { get; set; }
-            public string subreddit_id { get; set; }
-            public object mod_reason_by { get; set; }
-            public object removal_reason { get; set; }
-            public string link_flair_background_color { get; set; }
-            public string id { get; set; }
-            public bool is_robot_indexable { get; set; }
-            public object report_reasons { get; set; }
-            public string author { get; set; }
-            public object discussion_type { get; set; }
-            public int num_comments { get; set; }
-            public bool send_replies { get; set; }
-            public object whitelist_status { get; set; }
-            public bool contest_mode { get; set; }
-            public List<object> mod_reports { get; set; }
-            public bool author_patreon_flair { get; set; }
-            public object author_flair_text_color { get; set; }
-            public string permalink { get; set; }
-            public object parent_whitelist_status { get; set; }
-            public bool stickied { get; set; }
-            public string url { get; set; }
-            public int subreddit_subscribers { get; set; }
-            public double created_utc { get; set; }
-            public int num_crossposts { get; set; }
-            public object media { get; set; }
-            public bool is_video { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("steward_reports")]
+            public List<object> StewardReports { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("author_flair_richtext")]
+            public List<object> AuthorFlairRichtext { get; set; }
+            [JsonProperty("gildings")]
+            public Gildings2 Gildings { get; set; }
+            [JsonProperty("post_hint")]
+            public string PostHint { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("content_categories")]
+            public object ContentCategories { get; set; }
+            [JsonProperty("is_self")]
+            public bool IsSelf { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("mod_note")]
+            public object ModNote { get; set; }
+            [JsonProperty("created")]
+            public double Created { get; set; }
+            [JsonProperty("link_flair_type")]
+            public string LinkFlairType { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("wls")]
+            public object Wls { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("removed_by_category")]
+            public object RemovedByCategory { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("banned_by")]
+            public object BannedBy { get; set; }
+            [JsonProperty("author_flair_type")]
+            public string AuthorFlairType { get; set; }
+            [JsonProperty("domain")]
+            public string Domain { get; set; }
+            [JsonProperty("allow_live_comments")]
+            public bool AllowLiveComments { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("selftext_html")]
+            public object SelftextHtml { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("likes")]
+            public object Likes { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("suggested_sort")]
+            public object SuggestedSort { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("banned_at_utc")]
+            public object BannedAtUtc { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("view_count")]
+            public object ViewCount { get; set; }
+            [JsonProperty("archived")]
+            public bool Archived { get; set; }
+            [JsonProperty("no_follow")]
+            public bool NoFollow { get; set; }
+            [JsonProperty("is_crosspostable")]
+            public bool IsCrosspostable { get; set; }
+            [JsonProperty("pinned")]
+            public bool Pinned { get; set; }
+            [JsonProperty("over_18")]
+            public bool Over18 { get; set; }
+            [JsonProperty("preview")]
+            public Preview2 Preview { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("all_awardings")]
+            public List<object> AllAwardings { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("awarders")]
+            public List<object> Awarders { get; set; }
+            [JsonProperty("media_only")]
+            public bool MediaOnly { get; set; }
+            [JsonProperty("link_flair_template_id")]
+            public string LinkFlairTemplateId { get; set; }
+            [JsonProperty("can_gild")]
+            public bool CanGild { get; set; }
+            [JsonProperty("spoiler")]
+            public bool Spoiler { get; set; }
+            [JsonProperty("locked")]
+            public bool Locked { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("author_flair_text")]
+            public object AuthorFlairText { get; set; }
+            [JsonProperty("visited")]
+            public bool Visited { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("removed_by")]
+            public object RemovedBy { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("num_reports")]
+            public object NumReports { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("distinguished")]
+            public object Distinguished { get; set; }
+            [JsonProperty("subreddit_id")]
+            public string SubredditId { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("mod_reason_by")]
+            public object ModReasonBy { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("removal_reason")]
+            public object RemovalReason { get; set; }
+            [JsonProperty("link_flair_background_color")]
+            public string LinkFlairBackgroundColor { get; set; }
+            [JsonProperty("id")]
+            public string Id { get; set; }
+            [JsonProperty("is_robot_indexable")]
+            public bool IsRobotIndexable { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("report_reasons")]
+            public object ReportReasons { get; set; }
+            [JsonProperty("author")]
+            public string Author { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("discussion_type")]
+            public object DiscussionType { get; set; }
+            [JsonProperty("num_comments")]
+            public int NumComments { get; set; }
+            [JsonProperty("send_replies")]
+            public bool SendReplies { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("whitelist_status")]
+            public object WhitelistStatus { get; set; }
+            [JsonProperty("contest_mode")]
+            public bool ContestMode { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("mod_reports")]
+            public List<object> ModReports { get; set; }
+            [JsonProperty("author_patreon_flair")]
+            public bool AuthorPatreonFlair { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("author_flair_text_color")]
+            public object AuthorFlairTextColor { get; set; }
+            [JsonProperty("permalink")]
+            public string Permalink { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("parent_whitelist_status")]
+            public object ParentWhitelistStatus { get; set; }
+            [JsonProperty("stickied")]
+            public bool Stickied { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
+            [JsonProperty("subreddit_subscribers")]
+            public int SubredditSubscribers { get; set; }
+            [JsonProperty("created_utc")]
+            public double CreatedUtc { get; set; }
+            [JsonProperty("num_crossposts")]
+            public int NumCrossposts { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("media")]
+            public object Media { get; set; }
+            [JsonProperty("is_video")]
+            public bool IsVideo { get; set; }
         }
 
+        // TODO: Rename class to something more descriptive.
+        [JsonObject(MemberSerialization.OptIn)]
         public class Data2
         {
-            public object approved_at_utc { get; set; }
-            public string subreddit { get; set; }
-            public string selftext { get; set; }
-            public string author_fullname { get; set; }
-            public bool saved { get; set; }
-            public object mod_reason_title { get; set; }
-            public int gilded { get; set; }
-            public bool clicked { get; set; }
-            public string title { get; set; }
-            public List<object> link_flair_richtext { get; set; }
-            public string subreddit_name_prefixed { get; set; }
-            public bool hidden { get; set; }
-            public int? pwls { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("approved_at_utc")]
+            public object ApprovedAtUtc { get; set; }
+            [JsonProperty("subreddit")]
+            public string Subreddit { get; set; }
+            [JsonProperty("selftext")]
+            public string Selftext { get; set; }
+            [JsonProperty("author_fullname")]
+            public string AuthorFullname { get; set; }
+            [JsonProperty("saved")]
+            public bool Saved { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("mod_reason_title")]
+            public object ModReasonTitle { get; set; }
+            [JsonProperty("gilded")]
+            public int Gilded { get; set; }
+            [JsonProperty("clicked")]
+            public bool Clicked { get; set; }
+            [JsonProperty("title")]
+            public string Title { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("link_flair_richtext")]
+            public List<object> LinkFlairRichtext { get; set; }
+            [JsonProperty("subreddit_name_prefixed")]
+            public string SubredditNamePrefixed { get; set; }
+            [JsonProperty("hidden")]
+            public bool Hidden { get; set; }
+            [JsonProperty("pwls")]
+            public int? Pwls { get; set; }
             public string link_flair_css_class { get; set; }
-            public int downs { get; set; }
-            public int? thumbnail_height { get; set; }
-            public bool hide_score { get; set; }
-            public string name { get; set; }
-            public bool quarantine { get; set; }
-            public string link_flair_text_color { get; set; }
-            public string author_flair_background_color { get; set; }
-            public string subreddit_type { get; set; }
-            public int ups { get; set; }
-            public int total_awards_received { get; set; }
-            public MediaEmbed media_embed { get; set; }
-            public int? thumbnail_width { get; set; }
-            public string author_flair_template_id { get; set; }
-            public bool is_original_content { get; set; }
-            public List<object> user_reports { get; set; }
-            public SecureMedia secure_media { get; set; }
-            public bool is_reddit_media_domain { get; set; }
-            public bool is_meta { get; set; }
-            public object category { get; set; }
-            public SecureMediaEmbed secure_media_embed { get; set; }
-            public string link_flair_text { get; set; }
-            public bool can_mod_post { get; set; }
-            public int score { get; set; }
-            public object approved_by { get; set; }
-            public bool author_premium { get; set; }
-            public string thumbnail { get; set; }
-            public object edited { get; set; }
+            [JsonProperty("downs")]
+            public int Downs { get; set; }
+            [JsonProperty("thumbnail_height")]
+            public int? ThumbnailHeight { get; set; }
+            [JsonProperty("hide_score")]
+            public bool HideScore { get; set; }
+            [JsonProperty("name")]
+            public string Name { get; set; }
+            [JsonProperty("quarantine")]
+            public bool Quarantine { get; set; }
+            [JsonProperty("link_flair_text_color")]
+            public string LinkFlairTextColor { get; set; }
+            [JsonProperty("author_flair_background_color")]
+            public string AuthorFlairBackgroundColor { get; set; }
+            [JsonProperty("subreddit_type")]
+            public string SubredditType { get; set; }
+            [JsonProperty("ups")]
+            public int Ups { get; set; }
+            [JsonProperty("total_awards_received")]
+            public int TotalAwardsReceived { get; set; }
+            [JsonProperty("media_embed")]
+            public MediaEmbed MediaEmbed { get; set; }
+            [JsonProperty("thumbnail_width")]
+            public int? ThumbnailWidth { get; set; }
+            [JsonProperty("author_flair_template_id")]
+            public string AuthorFlairTemplateId { get; set; }
+            [JsonProperty("is_original_content")]
+            public bool IsOriginalContent { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("user_reports")]
+            public List<object> UserReports { get; set; }
+            [JsonProperty("secure_media")]
+            public SecureMedia SecureMedia { get; set; }
+            [JsonProperty("is_reddit_media_domain")]
+            public bool IsRedditMediaDomain { get; set; }
+            [JsonProperty("is_meta")]
+            public bool IsMeta { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("category")]
+            public object Category { get; set; }
+            [JsonProperty("secure_media_embed")]
+            public SecureMediaEmbed SecureMediaEmbed { get; set; }
+            [JsonProperty("link_flair_text")]
+            public string LinkFlairText { get; set; }
+            [JsonProperty("can_mod_post")]
+            public bool CanModPost { get; set; }
+            [JsonProperty("score")]
+            public int Score { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("approved_by")]
+            public object ApprovedBy { get; set; }
+            [JsonProperty("author_premium")]
+            public bool AuthorPremium { get; set; }
+            [JsonProperty("thumbnail")]
+            public string Thumbnail { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("edited")]
+            public object Edited { get; set; }
             public string author_flair_css_class { get; set; }
-            public List<object> steward_reports { get; set; }
-            public List<object> author_flair_richtext { get; set; }
-            public Gildings gildings { get; set; }
-            public string post_hint { get; set; }
-            public object content_categories { get; set; }
-            public bool is_self { get; set; }
-            public object mod_note { get; set; }
-            public double created { get; set; }
-            public string link_flair_type { get; set; }
-            public int? wls { get; set; }
-            public object removed_by_category { get; set; }
-            public object banned_by { get; set; }
-            public string author_flair_type { get; set; }
-            public string domain { get; set; }
-            public bool allow_live_comments { get; set; }
-            public string selftext_html { get; set; }
-            public object likes { get; set; }
-            public object suggested_sort { get; set; }
-            public object banned_at_utc { get; set; }
-            public object view_count { get; set; }
-            public bool archived { get; set; }
-            public bool no_follow { get; set; }
-            public bool is_crosspostable { get; set; }
-            public bool pinned { get; set; }
-            public bool over_18 { get; set; }
-            public Preview preview { get; set; }
-            public List<object> all_awardings { get; set; }
-            public List<object> awarders { get; set; }
-            public bool media_only { get; set; }
-            public bool can_gild { get; set; }
-            public bool spoiler { get; set; }
-            public bool locked { get; set; }
-            public string author_flair_text { get; set; }
-            public bool visited { get; set; }
-            public object removed_by { get; set; }
-            public object num_reports { get; set; }
-            public object distinguished { get; set; }
-            public string subreddit_id { get; set; }
-            public object mod_reason_by { get; set; }
-            public object removal_reason { get; set; }
-            public string link_flair_background_color { get; set; }
-            public string id { get; set; }
-            public bool is_robot_indexable { get; set; }
-            public object report_reasons { get; set; }
-            public string author { get; set; }
-            public object discussion_type { get; set; }
-            public int num_comments { get; set; }
-            public bool send_replies { get; set; }
-            public string whitelist_status { get; set; }
-            public bool contest_mode { get; set; }
-            public List<object> mod_reports { get; set; }
-            public bool author_patreon_flair { get; set; }
-            public string author_flair_text_color { get; set; }
-            public string permalink { get; set; }
-            public string parent_whitelist_status { get; set; }
-            public bool stickied { get; set; }
-            public string url { get; set; }
-            public int subreddit_subscribers { get; set; }
-            public double created_utc { get; set; }
-            public int num_crossposts { get; set; }
-            public Media media { get; set; }
-            public bool is_video { get; set; }
-            public string link_flair_template_id { get; set; }
-            public List<CrosspostParentList> crosspost_parent_list { get; set; }
-            public string crosspost_parent { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("steward_reports")]
+            public List<object> StewardReports { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("author_flair_richtext")]
+            public List<object> AuthorFlairRichtext { get; set; }
+            [JsonProperty("gildings")]
+            public Gildings Gildings { get; set; }
+            [JsonProperty("post_hint")]
+            public string PostHint { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("content_categories")]
+            public object ContentCategories { get; set; }
+            [JsonProperty("is_self")]
+            public bool IsSelf { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("mod_note")]
+            public object ModNote { get; set; }
+            [JsonProperty("created")]
+            public double Created { get; set; }
+            [JsonProperty("link_flair_type")]
+            public string LinkFlairType { get; set; }
+            [JsonProperty("wls")]
+            public int? Wls { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("removed_by_category")]
+            public object RemovedByCategory { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("banned_by")]
+            public object BannedBy { get; set; }
+            [JsonProperty("author_flair_type")]
+            public string AuthorFlairType { get; set; }
+            [JsonProperty("domain")]
+            public string Domain { get; set; }
+            [JsonProperty("allow_live_comments")]
+            public bool AllowLiveComments { get; set; }
+            [JsonProperty("selftext_html")]
+            public string SelftextHtml { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("likes")]
+            public object Likes { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("suggested_sort")]
+            public object SuggestedSort { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("banned_at_utc")]
+            public object BannedAtUtc { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("view_count")]
+            public object ViewCount { get; set; }
+            [JsonProperty("archived")]
+            public bool Archived { get; set; }
+            [JsonProperty("no_follow")]
+            public bool NoFollow { get; set; }
+            [JsonProperty("is_crosspostable")]
+            public bool IsCrosspostable { get; set; }
+            [JsonProperty("pinned")]
+            public bool Pinned { get; set; }
+            [JsonProperty("over_18")]
+            public bool Over18 { get; set; }
+            [JsonProperty("preview")]
+            public Preview Preview { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("all_awardings")]
+            public List<object> AllAwardings { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("awarders")]
+            public List<object> Awarders { get; set; }
+            [JsonProperty("media_only")]
+            public bool MediaOnly { get; set; }
+            [JsonProperty("can_gild")]
+            public bool CanGild { get; set; }
+            [JsonProperty("spoiler")]
+            public bool Spoiler { get; set; }
+            [JsonProperty("locked")]
+            public bool Locked { get; set; }
+            [JsonProperty("author_flair_text")]
+            public string AuthorFlairText { get; set; }
+            [JsonProperty("visited")]
+            public bool Visited { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("removed_by")]
+            public object RemovedBy { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("num_reports")]
+            public object NumReports { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("distinguished")]
+            public object Distinguished { get; set; }
+            [JsonProperty("subreddit_id")]
+            public string SubredditId { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("mod_reason_by")]
+            public object ModReasonBy { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("removal_reason")]
+            public object RemovalReason { get; set; }
+            [JsonProperty("link_flair_background_color")]
+            public string LinkFlairBackgroundColor { get; set; }
+            [JsonProperty("id")]
+            public string Id { get; set; }
+            [JsonProperty("is_robot_indexable")]
+            public bool IsRobotIndexable { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("report_reasons")]
+            public object ReportReasons { get; set; }
+            [JsonProperty("author")]
+            public string Author { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("discussion_type")]
+            public object DiscussionType { get; set; }
+            [JsonProperty("num_comments")]
+            public int NumComments { get; set; }
+            [JsonProperty("send_replies")]
+            public bool SendReplies { get; set; }
+            [JsonProperty("whitelist_status")]
+            public string WhitelistStatus { get; set; }
+            [JsonProperty("contest_mode")]
+            public bool ContestMode { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("mod_reports")]
+            public List<object> ModReports { get; set; }
+            [JsonProperty("author_patreon_flair")]
+            public bool AuthorPatreonFlair { get; set; }
+            [JsonProperty("author_flair_text_color")]
+            public string AuthorFlairTextColor { get; set; }
+            [JsonProperty("permalink")]
+            public string Permalink { get; set; }
+            [JsonProperty("parent_whitelist_status")]
+            public string ParentWhitelistStatus { get; set; }
+            [JsonProperty("stickied")]
+            public bool Stickied { get; set; }
+            [JsonProperty("url")]
+            public string Url { get; set; }
+            [JsonProperty("subreddit_subscribers")]
+            public int SubredditSubscribers { get; set; }
+            [JsonProperty("created_utc")]
+            public double CreatedUtc { get; set; }
+            [JsonProperty("num_crossposts")]
+            public int NumCrossposts { get; set; }
+            [JsonProperty("media")]
+            public Media Media { get; set; }
+            [JsonProperty("is_video")]
+            public bool IsVideo { get; set; }
+            [JsonProperty("link_flair_template_id")]
+            public string LinkFlairTemplateId { get; set; }
+            [JsonProperty("crosspost_parent_list")]
+            public List<CrosspostParentList> CrosspostParentList { get; set; }
+            [JsonProperty("crosspost_parent")]
+            public string CrosspostParent { get; set; }
         }
 
+        [JsonObject(MemberSerialization.OptIn)]
         public class Child
         {
-            public string kind { get; set; }
-            public Data2 data { get; set; }
+            [JsonProperty("kind")]
+            public string Kind { get; set; }
+            [JsonProperty("data")]
+            public Data2 Data { get; set; }
         }
 
+        // TODO: Rename class to something more descriptive.
+        [JsonObject(MemberSerialization.OptIn)]
         public class Data
         {
-            public string after { get; set; }
-            public int dist { get; set; }
-            public Facets facets { get; set; }
-            public string modhash { get; set; }
-            public List<Child> children { get; set; }
-            public object before { get; set; }
+            [JsonProperty("after")]
+            public string After { get; set; }
+            [JsonProperty("dist")]
+            public int Dist { get; set; }
+            [JsonProperty("facets")]
+            public Facets Facets { get; set; }
+            [JsonProperty("modhash")]
+            public string Modhash { get; set; }
+            [JsonProperty("children")]
+            public List<Child> Children { get; set; }
+            // TODO: Replace "object" with its own class
+            [JsonProperty("before")]
+            public object Before { get; set; }
         }
 
-        public string kind { get; set; }
-        public Data data { get; set; }
+        [JsonProperty("kind")]
+        public string Kind { get; set; }
+        [JsonProperty("data")]
+        public Data MainData { get; set; }
     }
 }

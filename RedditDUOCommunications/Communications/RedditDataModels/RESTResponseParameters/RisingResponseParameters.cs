@@ -16,17 +16,17 @@ namespace RedditCommunications
 
         public override string ToString()
         {
-            var output = $"rising.json?" +
-                         (After != null ? $"after={After}&" : string.Empty) +
-                         (Before != null ? $"before={Before}&" : string.Empty) +
-                         (Count != null ? $"count={Count}&" : string.Empty) +
-                         (IncludeCategories != null ? $"include_categories={IncludeCategories}&" : string.Empty) +
-                         (Limit != null ? $"limit={Limit}&" : string.Empty) +
-                         (Show != null ? $"show={Show}&" : string.Empty) +
-                         (SrDetail != null ? $"sr_detail={SrDetail}&" : string.Empty);
+            var endpoint = $"/rising.json?" +
+                           (After != null ? $"after={After}&" : string.Empty) +
+                           (Before != null ? $"before={Before}&" : string.Empty) +
+                           (Count != null ? $"count={Count}&" : string.Empty) +
+                           (IncludeCategories != null ? $"include_categories={IncludeCategories}&" : string.Empty) +
+                           (Limit != null ? $"limit={Limit}&" : string.Empty) +
+                           (Show != null ? $"show={Show}&" : string.Empty) +
+                           (SrDetail != null ? $"sr_detail={SrDetail}&" : string.Empty);
 
             // Remove the '&' at the end of the string.
-            return output.Substring(output.Length - 1);
+            return endpoint.Substring(0, endpoint.Length - 1);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace RedditCommunications
 {
-    public class BestResponse
+    public class BestResponse : GenericListingsResponse
     {
     }
 }
